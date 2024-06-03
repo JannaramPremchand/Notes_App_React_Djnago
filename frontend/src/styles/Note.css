@@ -6,16 +6,34 @@
   }
   
   .note-title {
-    color: #333;
+    color: #000;
+    font-size: larger;
+    font-weight: 900;
   }
   
   .note-content {
-    color: #666;
+    color: #000;
   }
   
   .note-date {
-    color: #999;
-    font-size: 0.8rem;
+    color: #000;
+    font-size: 1rem;
+    font-weight: 900;
+  }
+
+  .update-button {
+    background-color: #2fa61d; /* Red */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-right: 1rem;
+  }
+  
+  .update-button:hover {
+    background-color: #59ff00; /* Darker red */
   }
   
   .delete-button {

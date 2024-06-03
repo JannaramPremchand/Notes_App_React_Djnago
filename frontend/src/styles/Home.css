@@ -1,68 +1,120 @@
+
+
+body {
+  margin: 0; /* Remove default body margin */
+  padding: 0; /* Remove default body padding */
+  background-color: #242424;
+}
+
+.logout{
+  background-color: #2fa61d;
+  color: white;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+.logout:hover {
+  background-color: #59ff00;
+}
 /* Container for the whole page */
-div {
-    font-family: Arial, sans-serif;
-  }
-  
-  /* Styles for the notes section */
-  .notes-section {
-    margin-bottom: 2rem;
-  }
-  
-  .notes-section h2 {
-    color: #333;
-    font-size: 24px;
-  }
-  
-  /* Styles for individual notes - assuming your Note component has some container element */
-  .note {
-    background-color: #f9f9f9;
-    border-left: 5px solid #007bff;
-    margin: 10px 0;
-    padding: 10px 15px;
-    border-radius: 5px;
-  }
-  
-  /* Styles for the form section */
-  form {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    margin: auto;
-  }
-  
-  form h2 {
-    color: #333;
+.home {
+  display: flex;
+}
+
+/* Styles for the createNotes section */
+.createNotes {
+  flex: 1;
+  position: sticky;
+  top: 0;
+}
+
+.createNotes form {
+  background-color: #6e9f60;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.createNotes h2, .noteList h2 {
+  color: #fff;
     font-size: 24px;
     margin-bottom: 20px;
+    border: 1px solid #67c335;
+    padding: 1rem;
+    background: #67c335;
+    border-radius: 1rem;
+}
+
+.createNotes label {
+  font-weight: bold;
+  margin-top: 10px;
+  display: block;
+  font-size: 1rem;
+}
+
+.createNotes input,
+.createNotes textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.createNotes input:focus,
+.createNotes textarea:focus {
+  border-color: #66fc41;
+  outline: none;
+  box-shadow: 0 0 5px #66fc41;
+}
+
+.createNotes input[type="submit"] {
+  background-color: #2fa61d;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+.createNotes input[type="submit"]:hover {
+  background-color: #59ff00;
+}
+
+/* Styles for the noteList section container */
+.noteListContainer {
+  flex: 2;
+  overflow-y: auto; /* Add scroll when content exceeds height */
+  padding: 0 20px;
+  max-height: calc(100vh - 60px); /* Adjust based on your layout */
+}
+/* Hide scrollbar */
+.noteListContainer::-webkit-scrollbar {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .home {
+    flex-direction: column;
   }
-  
-  form label {
-    font-weight: bold;
-    margin-top: 10px;
+
+  .home, .createNotes{
+    position: unset;
   }
-  
-  form input,
-  form textarea {
+
+  .createNotes {
     width: 100%;
-    padding: 8px;
-    margin: 8px 0 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
   }
-  
-  form input[type="submit"] {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
+
+  .noteListContainer {
+    max-height: none;
   }
-  
-  form input[type="submit"]:hover {
-    background-color: #0056b3;
-  }
+}
